@@ -1,1 +1,1 @@
-Elapsed time (ns): 4785500 
+Total time =  4782400 ns 

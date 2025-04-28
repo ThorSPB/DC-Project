@@ -13,12 +13,18 @@ public class Main {
         ILogger fileLogger = new FileLogger("benchmark_log.txt");
 
         timer.start();
-        // Example code to measure
-        for (int i = 0; i < 1000000; i++);
-        long elapsed = timer.stop();
+        // 1st block for timing
+        for (int i = 0; i < 500000; i++);   // dummy work
+        long partial_time = timer.pause();
+        consoleLogger.write("Timer before pause = ", partial_time + " ns");
 
-        consoleLogger.write("Elapsed time (ns):", elapsed);
-        fileLogger.write("Elapsed time (ns):", elapsed);
+        timer.resume();
+        // 2nd block
+        for (int i = 0; i < 500000; i++);
+        long total = timer.stop();                          // both parts: before & after pause
+        consoleLogger.write("Total time = ", total + " ns");
+
+        fileLogger.write("Total time = ", total + " ns");
 
         consoleLogger.close();
         fileLogger.close();
