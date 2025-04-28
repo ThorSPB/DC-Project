@@ -7,6 +7,9 @@ public class Timer implements ITimer {
     private long elapsedTime;
     private boolean running;
 
+    /**
+     * it starts the timer by recording current time
+     */
     @Override
     public void start() {
         startTime = System.nanoTime();

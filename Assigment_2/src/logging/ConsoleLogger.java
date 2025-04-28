@@ -4,6 +4,11 @@ package logging;
 
 public class ConsoleLogger implements ILogger {
 
+
+    /**
+     * write() --> write a long value to the output
+     */
+
     @Override
     public void write(long value) {
         System.out.println(value);
