@@ -20,7 +20,7 @@ public class ConsoleLogger implements ILogger {
     }
 
     @Override
-    public void write(Object... values) {
+    public void write(Object... values) {   //  will print all values separated by space
         for (Object obj : values) {
             System.out.print(obj + " ");
         }
