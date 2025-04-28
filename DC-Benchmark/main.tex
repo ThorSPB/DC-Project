@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt,oneside,openright]{book}
+\usepackage[utf8x]{inputenc}
+ 
+\usepackage{bookman}
+\usepackage{graphicx}
+
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{fancyhdr} 
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{ifthen}
+\usepackage{geometry}
+\geometry{a4paper, portrait, margin=1in}
+\usepackage{afterpage}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{textgreek}
+\usepackage{ragged2e}
+\usepackage{inputenc}
+\usepackage{babel}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage[titles]{tocloft}
+\usepackage{wrapfig}
+\usepackage{floatrow}
+\usepackage{csquotes}
+\cftsetindents{figure}{0em}{3em}
+\cftsetindents{table}{0em}{3em}
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+
+\usepackage{etoolbox, tocloft}
+\preto\figure{%
+  \ifnum\value{figure}=0\addtocontents{lof}{{\bfseries Chapter \thechapter\vskip5pt}}\fi
+}
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\newtheorem{theorem}{Theorem}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+\pagestyle{fancy}
+\fancyhead[RO]{\footnotesize{\thepage}}
+\fancyhead[LO]{\footnotesize{\rightmark}}
+\fancyfoot{}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\renewcommand{\footnotesize}{\scriptsize}
+ 
+\begin{document}
+\input{0title}
+
+\setcounter{page}{1}
+%\tableofcontents
+
+\input{0readme}
+\input{1intro}
+\input{2stateoftheart}
+\input{3design-impl}
+\input{4usage}
+\input{5results}
+\input{6conclusions}
+
+\bibliographystyle{unsrt}
+\bibliography{bibliography.bib}
+
+\end{document}
