@@ -50,6 +50,28 @@ public class FileLogger implements ILogger {
     }
 
     @Override
+    public void writeTime(String text, long value, TimeUnit unit) {
+        try {
+            double converted = TimeConverter.convert(value, unit);
+            writer.write(text + " " + converted + " " + unit.name().toLowerCase());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void writeTime(long value, TimeUnit unit) {
+        try {
+            double converted = TimeConverter.convert(value, unit);
+            writer.write(converted + " " + unit.name().toLowerCase());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void close() {
         try {
             if (writer != null) {

@@ -3,6 +3,7 @@ package testbench;
 import logging.ConsoleLogger;
 import logging.FileLogger;
 import logging.ILogger;
+import logging.TimeUnit;
 import timing.ITimer;
 import timing.Timer;
 import bench.DummyBenchmark;
@@ -13,23 +14,21 @@ public class Main {
         ITimer timer = new Timer();
         ILogger consoleLogger = new ConsoleLogger();
         ILogger fileLogger = new FileLogger("benchmark_log.txt");
-
         IBenchmark bench = new DummyBenchmark();
 
-        // pass the size of array to work on with dummy operations
+        // Initialize benchmark with workload
         bench.initialize(100000);
 
         timer.start();
         bench.run();
 
-        // log the time after the benchmark run
-        consoleLogger.write("Finished in", timer.stop(), "ns");
+        // Log total time
+        long totalTime = timer.stop();
+        consoleLogger.writeTime("Finished in", totalTime, TimeUnit.MILLISECONDS);
+        fileLogger.writeTime("Finished in", totalTime, TimeUnit.MILLISECONDS);
 
-        fileLogger.write("Finished in", timer.stop(), "ns");
-
-
-        bench.clean(); // free memory
-
+        // Cleanup
+        bench.clean();
         consoleLogger.close();
         fileLogger.close();
     }

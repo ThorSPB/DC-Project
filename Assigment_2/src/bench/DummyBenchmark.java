@@ -5,9 +5,11 @@ import java.util.Random;
 
 public class DummyBenchmark implements IBenchmark {
     private int[] array;
+    private volatile boolean running = false;
 
     @Override
     public void initialize(Object... params) {
+        running = true;
         int size = (int) params[0]; // First parameter is the array size
 
         array = new int[size];
@@ -19,9 +21,10 @@ public class DummyBenchmark implements IBenchmark {
 
     @Override
     public void run() {
-        System.out.println("Benchmark started");
-        // some tasks to test the time -> sorting
-        Arrays.sort(array);
+        running = true;
+        for (int i = 0; i < array.length && running; i++) {
+            array[i] *= 2; // Simulate work
+        }
     }
 
     @Override
@@ -44,5 +47,6 @@ public class DummyBenchmark implements IBenchmark {
 
     @Override
     public void cancel() {
+        running = false;
     }
 }
