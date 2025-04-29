@@ -19,7 +19,7 @@ public class DummyBenchmark implements IBenchmark {
 
     @Override
     public void run() {
-        System.out.println("Benchmark started");
+        System.out.println(" -> Benchmark started");
         // some tasks to test the time -> sorting
         Arrays.sort(array);
     }

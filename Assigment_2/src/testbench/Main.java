@@ -22,10 +22,16 @@ public class Main {
         timer.start();
         bench.run();
 
-        // log the time after the benchmark run
-        consoleLogger.write("Finished in", timer.stop(), "ns");
+        long partial_time = timer.pause();
+        consoleLogger.write("Timer before pause = ", partial_time + " ns");
 
-        fileLogger.write("Finished in", timer.stop(), "ns");
+        timer.resume();
+        bench.run();
+        long total_time = timer.stop();
+        // log the time after the benchmark run
+        consoleLogger.write("Finished in", total_time, "ns");
+
+        fileLogger.write("Finished in", total_time, "ns");
 
 
         bench.clean(); // free memory
