@@ -1,1 +1,2 @@
-Finished in 31972800 ns 
+Finished in 33203900 ns 
+Finished in 684043 ms 
