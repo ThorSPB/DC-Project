@@ -28,6 +28,18 @@ public class ConsoleLogger implements ILogger {
     }
 
     @Override
+    public void writeTime(String text, long value, TimeUnit unit) {
+        double converted = TimeConverter.convert(value, unit);
+        System.out.println(text + " " + converted + " " + unit.name().toLowerCase());
+    }
+
+    @Override
+    public void writeTime(long value, TimeUnit unit) {
+        double converted = TimeConverter.convert(value, unit);
+        System.out.println(converted + " " + unit.name().toLowerCase());
+    }
+
+    @Override
     public void close() {
         // No action needed for console
     }
