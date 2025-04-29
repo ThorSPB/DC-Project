@@ -5,6 +5,8 @@ import logging.FileLogger;
 import logging.ILogger;
 import timing.ITimer;
 import timing.Timer;
+import bench.DummyBenchmark;
+import bench.IBenchmark;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,19 +14,21 @@ public class Main {
         ILogger consoleLogger = new ConsoleLogger();
         ILogger fileLogger = new FileLogger("benchmark_log.txt");
 
+        IBenchmark bench = new DummyBenchmark();
+
+        // pass the size of array to work on with dummy operations
+        bench.initialize(100000);
+
         timer.start();
-        // 1st block for timing
-        for (int i = 0; i < 500000; i++);   // dummy work
-        long partial_time = timer.pause();
-        consoleLogger.write("Timer before pause = ", partial_time + " ns");
+        bench.run();
 
-        timer.resume();
-        // 2nd block
-        for (int i = 0; i < 500000; i++);
-        long total = timer.stop();                          // both parts: before & after pause
-        consoleLogger.write("Total time = ", total + " ns");
+        // log the time after the benchmark run
+        consoleLogger.write("Finished in", timer.stop(), "ns");
 
-        fileLogger.write("Total time = ", total + " ns");
+        fileLogger.write("Finished in", timer.stop(), "ns");
+
+
+        bench.clean(); // free memory
 
         consoleLogger.close();
         fileLogger.close();
