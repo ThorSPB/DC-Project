@@ -1,9 +1,32 @@
 \chapter{State of the art}
 
-Describe \textbf{two} (or even more, if you want) similar existing benchmarks which represent the source of your inspiration. If you consider it proper, you can compare the benchmarks within a table. It's easy to work with tables in Overleaf, especially since you can use an online generator. (Again, I suggest you to look over the resource \cite{table-generator}.) 
+\section{Cinebench}
 
-Next, choose \textbf{one} such benchmark and \textbf{briefly describe its functionality}, and how it implements it. Outline a few \textbf{advantages and disadvantages} (in terms of offered features) of your application compared to the state-of-the-art ones. 
+\begin{itemize}
+  \item Cinebench is a free benchmarking tool developed by Maxon, designed to evaluate your computer's CPU and GPU performance by rendering complex 3D scenes. It simulates real-world tasks to assess how well your hardware handles intensive workloads, making it useful for anybody stress-testing their desktop.
+  \item Cinebench provides separate tests for single-core and multi-core CPU performance, as well as GPU rendering capabilities, offering a comprehensive view of your system's processing power. It's widely used by hardware reviewers, system builders, and enthusiasts to compare performance across different systems and configurations.
+\end{itemize}
 
-The idea behind this chapter is not to try and boast about having implemented a benchmark that is greater than anything already on the market. It is likely not the case (and, of course, that's not a problem, at all!). The goal is to understand where your application lies, what it lacks, what it implements differently, and maybe, what advantages it offers. Being a good engineer doesn't mean only creating new and innovative applications, it also means you can come up with a proper analysis. 
+\section{UserBenchmark}
 
-\textit{\textbf{Remember!} A list only of disadvantages is not a wrong analysis.} In fact, it's more important to do a proper analysis of what you have done and show that you understand what you need to improve than to list a few advantages or benefits of using your approach. Not mentioning disadvantages doesn't mean everything is perfect, it just means you want to hide them or, even worse, you don't even know you have them. 
+\begin{itemize}
+  \item UserBenchmark is a free benchmarking tool and website that allows users to evaluate and compare the performance of their computer hardware, including CPUs, GPUs, SSDs, HDDs, RAM, and USB drives.
+  \item UserBenchmark displays the results in percentages. For example, if a CPU has scored 120\% in the test, that means it completed the test 20\% "average" CPU.
+  \item It should be noted that the CPU test in UserBenchmark faced some backlash for placing too much importance in single-core performance.
+\end{itemize}
+
+\section{Comparison}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+                      & \textbf{Cinebench}  & \textbf{UserBenchmark} & \textbf{HappyBench}  \\ \hline
+Single-core only test & Yes                 & No                     & No                      \\ \hline
+Hardware Tested       & CPU, GPU            & CPU, GPU, RAM, SSD, USB& CPU, SSD             \\ \hline
+Results format        & Score               & Percentage             & Time, Percentage \\
+\hline
+\end{tabular}
+\label{example-table}
+\end{table}
+
+

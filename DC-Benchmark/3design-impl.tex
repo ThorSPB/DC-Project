@@ -1,13 +1,15 @@
-\chapter{Design and implementation}
-
-This chapter should answer to the question: \textbf{How?}. 
+\chapter{Design and implementation} 
 
 \begin{itemize}
-  \item Describe the benchmark’s features, what measurements it offers, and how they are implemented.
+  \item  First of all, we followed the template offered by the project sheets. We used Java as a programming language and IntelliJ as IDE. We created functionalities for the bench, logging and the timing, whom are the base of a benchmark. Offers the measure in time(nanoseconds), and we used the package approach for each piece that we needed in order to knock down the benchmark in a organised way.
   
-  \item \textbf{Briefly} describe the used algorithms and other \textbf{special features}. Do not add source code (entire files), \textbf{only} short snippets \textbf{if you feel they are relevant}, and if you want to emphasize anything.
-  
-  \item No need to describe aspects of OOP (remember your documentation should not have more than 10-12 pages), but describing the software architecture, the communication and interdependence between software components (libraries) is a \textbf{plus}.
-  
-  \item Here is also the place where you can add the link to the \textbf{git repository} you have used, in case you used one. \cite{git-repo} (Just go in bibliography.bib file and replace the link I have added there, make a reference to that link inside this chapter and it's perfect.
+  \item \textbf{Briefly} describe the used algorithms and other \textbf{special features}. Do not add source code (entire files), \textbf{only} short snippets \textbf{if you feel they are relevant}, and if you want to emphasize anything. In order to test the functionality, we created a "Dummy Benchmark" in order to test the overall functionality:
+  \begin{itemize}
+      \item Dummy: complete a array of N elements with random values
+      \item Demo: take N random integers between 0 - 1000 and perform bubble sort
+      \item CPU: perform the addition of all prime numbers upon a upper limit
+      \item Sleep: the same as CPU but with a different run condition, with a "sleep" time added.
+  \end{itemize}
+
+  \item https://github.com/ThorSPB/DC-Project.git
 \end{itemize}
