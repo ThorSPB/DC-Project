@@ -1,0 +1,17 @@
+// search online for MOPS/MFLOPS information on past/current generation CPUs and supercomputers
+// (3+3 examples in total, in a txt file/ paper)
+
+
+CPUs:
+1. Intel Core i9-13900K (2022) — ~1300 GFLOPS (Single Precision Floating Point)
+2. AMD Ryzen 9 7950X (2022) — ~1160 GFLOPS
+3. Intel Pentium 4 (2002) — ~4 GFLOPS
+
+Supercomputers:
+1. Fugaku (Japan, 2020) — ~442,000 TFLOPS (Top500 List #1 in 2020)
+2. Summit (USA, 2018) — ~200,000 TFLOPS
+3. Tianhe-2 (China, 2013) — ~33,860 TFLOPS
+
+Sources:
+- Top500.org
+- CPU Benchmark (PassMark, Geekbench FP Benchmarks)
