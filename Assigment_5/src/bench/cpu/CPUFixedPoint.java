@@ -56,8 +56,8 @@ public class CPUFixedPoint implements IBenchmark {
             j = num[1] * (k - j) * (l - k);  // 5 ops
             k = num[3] * k - (l - j) * k;    // 5 ops
             l = (l - k) * (num[2] + j);      // 4 ops
-            res[l % size] = j + k + l;       // 5 ops (modulo + assignment + 2 array access + 2 additions)
-            res[k % size] = j * k * l;       // 4 ops (modulo + assignment + 2 array access + 2 multiplications)
+            res[(l % size + size) % size] = j + k + l; // 5 ops (modulo + assignment + 2 array access + 2 additions)
+            res[(k % size + size) % size] = j * k * l; // 4 ops (modulo + assignment + 2 array access + 2 multiplications)
 
             operations += 23; // TOTAL per iteration (counted carefully)
         }
