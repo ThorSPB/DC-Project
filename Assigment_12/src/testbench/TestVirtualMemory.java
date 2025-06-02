@@ -6,11 +6,11 @@ public class TestVirtualMemory {
     public static void main(String[] args) {
         VirtualMemoryBenchmark bench = new VirtualMemoryBenchmark();
 
-        long fileSize = 10L * 1024 * 1024 * 1024; // 2 GB
+        long fileSize = 4L * 1024 * 1024 * 1024; // 2 GB
         int bufferSize = 1024 * 1024; // 1 MB
 
         bench.run(new Object[]{fileSize, bufferSize});
-        System.out.println("2GB test = " + bench.getResult());
+        System.out.println("4GB test = " + bench.getResult());
 
         // Test with 8 GB
         //fileSize = 8L * 1024 * 1024 * 1024; // 8 GB
