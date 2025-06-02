@@ -1,0 +1,8 @@
+    - Write speed to virtual memory (RAM) — slower because you're generating and writing random data.
+    - Read speed — much faster (RAM is extremely fast for reading big blocks of memory).
+
+FOR 2GB:
+Wrote 2048 MB to virtual memory at 274.47 MB/s
+Read 2048 MB from virtual memory at 4492.18 MB/s
+
+
