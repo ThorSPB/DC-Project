@@ -9,7 +9,7 @@ import timing.Timer;
 import bench.DummyBenchmark;
 import bench.IBenchmark;
 
-public class TestDemoBench {
+public class    TestDemoBench {
     public static void main(String[] args) {
         ITimer timer = new Timer();
         ILogger consoleLogger = new ConsoleLogger();
