@@ -22,6 +22,7 @@ public class TestCPUFixedVsFloatingPoint {
 		double fixedTime = timer.read() / 1e9;
 		logger.write("Fixed point time: " + fixedTime + " seconds");
 
+		// Add fixed-point benchmark and comparative analysis with floating-point operations
 		timer.start();
 		benchmark.run(NumberRepresentation.FLOATING);
 		timer.stop();
