@@ -10,7 +10,7 @@ import bench.IBenchmark;
 
 public class HDDRandomAccess implements IBenchmark {
 
-    private final static String PATH = "D:\\test.raf";
+    private final static String PATH = "C:\\000-bench\\test.raf";
     private String result;
 
     @Override
@@ -66,7 +66,7 @@ public class HDDRandomAccess implements IBenchmark {
                             + (steps * bufferSize / 1024 / 1024) + " MB, "
                             + 1.0 * (steps * bufferSize / 1024 / 1024) / timeMs * 1000 + "MB/s]";
                 } else if (String.valueOf(param[1]).toLowerCase().equals("ft")) {
-                    int ios = ra.randomReadFixedTime(PATH, bufferSize, runtime);
+                    long ios = ra.randomReadFixedTime(PATH, bufferSize, runtime);
                     result = ios + " I/Os per second ["
                             + (ios * bufferSize / 1024 / 1024) + " MB, "
                             + 1.0 * (ios * bufferSize / 1024 / 1024) / runtime * 1000 + "MB/s]";
@@ -80,7 +80,7 @@ public class HDDRandomAccess implements IBenchmark {
                             + (steps * bufferSize / 1024 / 1024) + " MB, "
                             + 1.0 * (steps * bufferSize / 1024 / 1024) / timeMs * 1000 + "MB/s]";
                 } else if (String.valueOf(param[1]).toLowerCase().equals("ft")) {
-                    int ios = ra.randomWriteFixedTime(PATH, bufferSize, runtime);
+                    long ios = ra.randomWriteFixedTime(PATH, bufferSize, runtime);
                     result = ios + " I/Os per second ["
                             + (ios * bufferSize / 1024 / 1024) + " MB, "
                             + 1.0 * (ios * bufferSize / 1024 / 1024) / runtime * 1000 + "MB/s]";
